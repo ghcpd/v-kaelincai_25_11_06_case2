@@ -1,0 +1,1 @@
+Log file for Project B tests - will be created by run_tests.sh
