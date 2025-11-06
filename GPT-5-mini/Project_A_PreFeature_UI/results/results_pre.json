@@ -1,0 +1,22 @@
+[
+  {
+    "id": "tc1_normal",
+    "overlap": true
+  },
+  {
+    "id": "tc2_many_points",
+    "overlap": true
+  },
+  {
+    "id": "tc3_malformed",
+    "error": "'value'"
+  },
+  {
+    "id": "tc4_complex_multi",
+    "overlap": true
+  },
+  {
+    "id": "tc5_edge_zero",
+    "overlap": true
+  }
+]

@@ -1,0 +1,12 @@
+[
+  {"id": "tc1_normal", "description": "Normal small dataset", "data": [{"label":"A","value":10},{"label":"B","value":20},{"label":"C","value":15}], "expect": {"no_overlap": false}},
+  {"id": "tc2_many_points", "description": "Many data points causing overlaps", "data": [
+      {"label":"0", "value":1}, {"label":"1","value":2}, {"label":"2","value":3}, {"label":"3","value":4}, {"label":"4","value":5},
+      {"label":"5","value":1}, {"label":"6","value":2}, {"label":"7","value":3}, {"label":"8","value":4}, {"label":"9","value":5},
+      {"label":"10","value":1}, {"label":"11","value":2}, {"label":"12","value":3}, {"label":"13","value":4}, {"label":"14","value":5},
+      {"label":"15","value":1}, {"label":"16","value":2}, {"label":"17","value":3}, {"label":"18","value":4}, {"label":"19","value":5}
+  ], "expect": {"no_overlap": false}},
+  {"id": "tc3_malformed", "description": "Malformed input missing value", "data": [{"label":"A"}, {"label":"B","value":5}], "expect": {"error": true}},
+  {"id": "tc4_complex_multi", "description": "Multi-series like structure (flattened)", "data": [{"label":"S1_1","value":5},{"label":"S1_2","value":6},{"label":"S2_1","value":5},{"label":"S2_2","value":6}], "expect": {"no_overlap": false}},
+  {"id": "tc5_edge_zero", "description": "Zero and negative values", "data": [{"label":"Z","value":0},{"label":"N","value":-1},{"label":"P","value":3}], "expect": {"no_overlap": false}}
+]
