@@ -1,0 +1,7 @@
+body { font-family: Arial, sans-serif; }
+h1 { color: #333; }
+
+/* Buggy media query that mistakenly hides the chart on small screens */
+@media (max-width: 600px) {
+  img { display: none; }
+}
