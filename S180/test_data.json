@@ -1,0 +1,9 @@
+{
+  "cases": [
+    {"id": "normal_1", "description": "Basic bar chart with readable labels"},
+    {"id": "dense_many", "description": "Chart with many bars where labels could overlap"},
+    {"id": "edge_same_values", "description": "Many bars with equal values"},
+    {"id": "malformed", "description": "Malformed input"},
+    {"id": "multi_series", "description": "Multi-series data requiring stacking"}
+  ]
+}

@@ -1,0 +1,7 @@
+[
+  {"id": "normal_1", "data": [5,10,7], "labels": ["A","B","C"], "expect_no_overlap": true},
+  {"id": "dense_many", "data": [10,11,9,10,12,11,10,11,12,11,10,11], "labels": ["P0","P1","P2","P3","P4","P5","P6","P7","P8","P9","P10","P11"], "expect_no_overlap": false},
+  {"id": "edge_same_values", "data": [10,10,10,10,10,10], "labels": ["S0","S1","S2","S3","S4","S5"], "expect_no_overlap": false},
+  {"id": "malformed", "data": "not_a_list", "labels": [], "expect_no_overlap": false},
+  {"id": "multi_series", "data": [[5,7,6],[4,8,5]], "labels": ["A","B","C"], "expect_no_overlap": false}
+]
