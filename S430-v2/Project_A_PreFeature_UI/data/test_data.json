@@ -1,0 +1,42 @@
+[
+    {
+        "id": "TC01_normal_bar",
+        "description": "Basic bar chart with non-overlapping labels",
+        "data": [10, 20, 5, 15],
+        "categories": ["A", "B", "C", "D"],
+        "expected": {"no_overlap": true}
+    },
+    {
+        "id": "TC02_many_points",
+        "description": "Bar chart with many points where label collisions are likely",
+        "data": [5, 8, 3, 7, 9, 6, 5, 10, 12, 11, 4, 6, 8, 9, 5],
+        "categories": ["P0", "P1", "P2", "P3", "P4", "P5", "P6", "P7", "P8", "P9", "P10", "P11", "P12", "P13", "P14"],
+        "expected": {"no_overlap": true}
+    },
+    {
+        "id": "TC03_large_values",
+        "description": "Bar chart where some values are large causing close labels",
+        "data": [100, 95, 110, 105, 90],
+        "categories": ["W", "X", "Y", "Z", "Q"],
+        "expected": {"no_overlap": true}
+    },
+    {
+        "id": "TC04_malformed",
+        "description": "Malformed input with missing categories",
+        "data": [1, 2, 3],
+        "categories": null,
+        "expected": {"error": true}
+    },
+    {
+        "id": "TC05_multi_series",
+        "description": "Multi-series bar chart where series labels may overlap",
+        "data": {
+            "series": [
+                {"name": "S1", "values": [10, 20, 30]},
+                {"name": "S2", "values": [11, 18, 25]}
+            ],
+            "categories": ["A", "B", "C"]
+        },
+        "expected": {"no_overlap": true}
+    }
+]
