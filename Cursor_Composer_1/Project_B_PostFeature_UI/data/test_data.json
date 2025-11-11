@@ -1,0 +1,99 @@
+{
+  "test_cases": [
+    {
+      "test_id": "TC001",
+      "description": "Normal case: Basic bar chart with readable labels",
+      "chart_type": "bar",
+      "input_data": {
+        "labels": ["Jan", "Feb", "Mar", "Apr", "May"],
+        "values": [10, 25, 15, 30, 20]
+      },
+      "expected_label_positions": "above_bars",
+      "pass_criteria": {
+        "no_overlap": true,
+        "readable": true,
+        "dynamic_adjustment": true
+      }
+    },
+    {
+      "test_id": "TC002",
+      "description": "Edge case: Chart with many data points requiring dynamic label adjustment",
+      "chart_type": "bar",
+      "input_data": {
+        "labels": ["Q1", "Q2", "Q3", "Q4", "Q5", "Q6", "Q7", "Q8", "Q9", "Q10", "Q11", "Q12"],
+        "values": [45, 67, 89, 34, 56, 78, 90, 23, 45, 67, 89, 100]
+      },
+      "expected_label_positions": "dynamic",
+      "pass_criteria": {
+        "no_overlap": true,
+        "readable": true,
+        "dynamic_adjustment": true
+      }
+    },
+    {
+      "test_id": "TC003",
+      "description": "Edge case: Chart with very small values",
+      "chart_type": "bar",
+      "input_data": {
+        "labels": ["A", "B", "C", "D"],
+        "values": [1, 2, 3, 4]
+      },
+      "expected_label_positions": "above_bars",
+      "pass_criteria": {
+        "no_overlap": true,
+        "readable": true,
+        "dynamic_adjustment": true
+      }
+    },
+    {
+      "test_id": "TC004",
+      "description": "Malformed input: Missing label values",
+      "chart_type": "bar",
+      "input_data": {
+        "labels": ["X", "Y", "Z"],
+        "values": [10, null, 20]
+      },
+      "expected_label_positions": "handled_gracefully",
+      "pass_criteria": {
+        "no_overlap": true,
+        "readable": true,
+        "error_handling": true
+      }
+    },
+    {
+      "test_id": "TC005",
+      "description": "Complex case: Multi-series chart with overlapping labels",
+      "chart_type": "line",
+      "input_data": {
+        "labels": ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+        "series1": [20, 35, 40, 25, 30, 45, 50],
+        "series2": [15, 30, 35, 20, 25, 40, 45],
+        "series3": [10, 25, 30, 15, 20, 35, 40]
+      },
+      "expected_label_positions": "dynamic_no_overlap",
+      "pass_criteria": {
+        "no_overlap": true,
+        "readable": true,
+        "dynamic_adjustment": true,
+        "multi_series_handling": true
+      }
+    },
+    {
+      "test_id": "TC006",
+      "description": "Edge case: Chart with very large values",
+      "chart_type": "bar",
+      "input_data": {
+        "labels": ["Product A", "Product B", "Product C"],
+        "values": [1000000, 2000000, 1500000]
+      },
+      "expected_label_positions": "above_bars",
+      "pass_criteria": {
+        "no_overlap": true,
+        "readable": true,
+        "dynamic_adjustment": true,
+        "formatting": true
+      }
+    }
+  ]
+}
+
