@@ -1,0 +1,100 @@
+Here is the restructured version of the prompt based on your request:
+________________________________________
+Role
+You are a software engineer responsible for implementing and testing the capabilities of AI models on the Enhancement subtype within the Feature & improvement category.
+Your task is to provide two separate, complete Python projects:
+1.	Project A – Pre-Enhancement (Basic Charting Implementation)
+A project that contains the original, basic implementation of the data visualization platform. The platform generates charts and reports, but the current implementation has overlapping value labels on the data bars or lines, which negatively impacts readability. Additionally, the position of the value labels is not dynamically adjusted during chart updates, making the analysis difficult for users.
+2.	Project B – Post-Enhancement (Improved Charting Implementation)
+A project that contains the enhanced version of the data visualization platform. The value labels are dynamically adjusted based on the chart's content, avoiding overlaps. Furthermore, font size and color contrast have been optimized to improve the clarity and readability of the data presented.
+Each project must include its own source code, environment setup, automated tests, visual artifacts (screenshots of before/after changes), and execution scripts. All files must be generated, stored locally, and fully reproducible. Both projects should handle optimizations, edge cases, and correctness verification while providing measurable improvements in the usability and accessibility of the charts.
+________________________________________
+Title
+Evaluation of S180, S390, S430-v2, Claude Haiku 4.5, and GPT-5-mini on Feature & improvement – Enhancement for Improved Data Visualization
+________________________________________
+Description
+This experiment evaluates AI models’ ability to improve the functionality of a data visualization platform, specifically focusing on enhancing the readability and usability of generated charts. In Project A, the charts are generated with static value labels that overlap with the data bars or lines, making it difficult for users to interpret the data correctly. In Project B, the labels are dynamically adjusted to avoid overlap and improve clarity, and visual improvements such as font size and color contrast are introduced to enhance the user experience.
+Key objectives:
+1.	Replicate the basic functionality of the data visualization platform in Project A, including the chart rendering and value label placement issues.
+2.	Implement enhancements in Project B that dynamically adjust label positions and improve chart readability through font and contrast adjustments.
+3.	Verify the improvements with automated tests and visual evidence (before/after screenshots).
+4.	Quantify the improvements in usability and accessibility.
+________________________________________
+Key Evaluation Criteria
+• Correct reproduction of the UI/UX bug in Project A and correct remediation in Project B.
+• Automated validation of visual properties (no label overlap, appropriate label positions).
+• Visual evidence: high-quality before/after screenshots for each test case.
+• Quantitative checks: pass/fail criteria for label visibility, readability, and proper spacing.
+• Accessibility improvements (ARIA roles, contrast ratios).
+• Reproducible environment with one-command test execution and a final comparison report.
+________________________________________
+Requirements for the AI Model Output
+1.	Test Scenario & Description
+o	Describe the scenario being tested: A data visualization platform that generates charts with value labels that overlap data bars or lines.
+o	Define expected behavior: In Project B, labels are dynamically repositioned to avoid overlap and are properly adjusted when the chart is updated.
+o	Specify expected input/output for tests (preferably JSON): tests should simulate chart rendering with various data sets and include assertions like:
+o	Define acceptance criteria: Labels are not overlapping, the chart is readable, and the updates occur dynamically when data changes.
+2.	Test Data Generation
+o	Generate at least five structured test cases saved in test_data.json, covering:
+• Normal cases: Basic bar chart with readable labels.
+• Edge/boundary cases: Charts with many data points where labels need to dynamically adjust.
+• Malformed inputs: Incorrect data formats or missing label values.
+• Complex cases: Multi-series charts with overlapping labels and complex data.
+o	For each test case include: test id, input data, expected label positions, and pass/fail criteria.
+3.	Reproducible Environment
+o	Provide requirements.txt, setup.sh, or a Dockerfile for consistent test execution.
+o	Include instructions for environment setup (e.g., dependencies like Plotly or Matplotlib for charting).
+o	Ensure that tests run on both pre- and post-enhancement versions of the platform.
+4.	Test Code
+o	Generate executable Python test code that:
+a. Simulates chart generation and checks label positions.
+b. Verifies labels are dynamically repositioned to prevent overlap.
+c. Validates visual improvements such as font size and contrast.
+d. Reports success/failure for each test case.
+e. Computes evaluation metrics such as readability and label visibility.
+o	Ensure that tests are automated and can be executed via run_tests.sh.
+5.	Execution Scripts
+o	Generate run_tests.sh for both projects to automate:
+a. Environment setup.
+b. Running tests on both pre- and post-enhancement platforms.
+c. Collecting results, logs, and performance metrics.
+o	Provide a top-level run_all.sh that:
+a. Runs Project A and Project B tests sequentially.
+b. Aggregates results and generates a comparison report.
+6.	Expected Output
+o	For each test case, provide:
+• Before/after screenshots showing label adjustments.
+• results_pre.json / results_post.json — assertions and metrics related to label visibility and spacing.
+• Log entries showing test progress and results.
+o	compare_report.md must embed before/after screenshots, and a summary table of metrics such as label visibility and readability.
+7.	Documentation / Explanation
+o	Provide a README.md file detailing:
+• How to set up and run both projects.
+• The improvements made in Project B and how they address the issues in Project A.
+• How to interpret test results and logs.
+• Limitations and recommendations for further accessibility improvements.
+________________________________________
+Deliverables (All files must be saved locally and organized into two project folders, plus shared artifacts)
+Project A – Pre-Feature (Broken UI) — Folder name: Project_A_PreFeature_UI
+• src/ — Frontend source demonstrating the UI bug: index.html, styles.css (with incorrect media query/layout), app.js (if applicable).
+• data/ — test_data.json (with ≥5 test vectors) and input fixtures.
+• tests/ — Test harness for pre-feature behavior (test_pre_ui.py).
+• logs/ — Logs of execution for Project A (log_pre.txt).
+• results/ — Test results and metrics (results_pre.json).
+• requirements.txt — Python/test tooling dependencies.
+• setup.sh — Environment setup script.
+• run_tests.sh — One-command script to run Project A tests and collect artifacts.
+Project B – Post-Feature (Fixed UI) — Folder name: Project_B_PostFeature_UI
+• src/ — Fixed frontend code: index.html, styles.fixed.css, app.fixed.js (with corrected media queries).
+• data/ — test_data.json (same fixtures as Project A).
+• tests/ — Test harness for post-feature behavior (test_post_ui.py).
+• logs/ — Logs of execution for Project B (log_post.txt).
+• results/ — Test results and metrics (results_post.json).
+• requirements.txt — Dependencies for Project B tests.
+• setup.sh — Environment setup script.
+• run_tests.sh — One-command script to run Project B tests and collect artifacts.
+Shared Artifacts (repo root)
+• test_data.json — A canonical set of structured test cases.
+• compare_report.md — Comparison report with before/after screenshots, metrics, and summary.
+• run_all.sh — Master script to run all tests, aggregate results, and generate the final report.
+• README.md — Detailed instructions and explanations.
